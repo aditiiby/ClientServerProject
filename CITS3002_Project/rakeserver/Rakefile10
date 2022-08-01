@@ -1,0 +1,32 @@
+PORT  = 12345
+HOSTS = 127.0.0.1 127.0.0.1:12346
+
+actionset1:
+	remote-cc -c func1.c
+		requires func1.c
+	remote-cc -c func2.c
+		requires func2.c
+	remote-cc -c func3.c
+		requires func3.c
+	remote-cc -c func4.c
+		requires func4.c
+	remote-cc -c func5.c
+		requires func5.c
+	remote-cc -c func6.c
+		requires func6.c
+	remote-cc -c func7.c
+		requires func7.c
+	remote-cc -c func8.c
+		requires func8.c
+	remote-cc -c func9.c
+		requires func9.c
+	remote-cc -c func10.c
+		requires func10.c
+
+actionset2:
+	remote-cc -c program10.c
+		requires program10.c
+
+actionset3:
+	remote-cc -o program10 program10.o func1.o func2.o func3.o func4.o func5.o func6.o func7.o func8.o func9.o func10.o
+		requires program10.o func1.o func2.o func3.o func4.o func5.o func6.o func7.o func8.o func9.o func10.o

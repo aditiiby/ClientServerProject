@@ -1,0 +1,15 @@
+PORT  = 12345
+HOSTS = 127.0.0.1
+
+actionset1:
+    echo starting actionset1
+	remote-cc -c func1.c
+		requires func1.c
+
+actionset2:
+	remote-cc -c program1.c
+		requires program1.c
+
+actionset3:
+	remote-cc -o program1 program1.o func1.o
+		requires program1.o func1.o

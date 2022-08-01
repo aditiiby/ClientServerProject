@@ -1,0 +1,12 @@
+
+program1:	program1.o func1.o
+	cc -o program1 program1.o func1.o
+
+program1.o:	program1.c
+	cc -c program1.c
+
+%.o:	%.c
+	cc -c $<
+
+clean:
+	rm -rf program1 Makefile1 Rakefile1 	program1.c func*.c 	program1.o func1.o

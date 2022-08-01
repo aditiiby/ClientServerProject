@@ -1,0 +1,12 @@
+
+program10:	program10.o func1.o func2.o func3.o func4.o func5.o func6.o func7.o func8.o func9.o func10.o
+	cc -o program10 program10.o func1.o func2.o func3.o func4.o func5.o func6.o func7.o func8.o func9.o func10.o
+
+program10.o:	program10.c
+	cc -c program10.c
+
+%.o:	%.c
+	cc -c $<
+
+clean:
+	rm -rf program10 Makefile10 Rakefile10 	program10.c func*.c 	program10.o func1.o func2.o func3.o func4.o func5.o func6.o func7.o func8.o func9.o func10.o
